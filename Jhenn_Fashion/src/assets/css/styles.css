@@ -55,8 +55,15 @@ body {
 .item-link i {
   font-size: 30px;
 }
+
+.item-link .tienda{
+    color: orangered;
+}
 .item-link-2{
     text-align: center;
+}
+.item-link-2 {
+  text-align: center;
 }
 .item-link-2 span {
   color: #000;
@@ -150,12 +157,17 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.sliderss{
+    position: relative;
+    margin: 50px 0px;
+    box-shadow: 0px 0px 8px 7px rgba(0,0,0,0.1);
+}
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+
 }
 .content-variant-list {
   display: flex;
@@ -178,9 +190,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-.sliderss{
-    position: relative;
-    margin: 50px 0px;
+.sliderss {
+  position: relative;
+  margin: 50px 0px;
 }
 .sliderss .swiper-button-prev::after,
 .sliderss .swiper-button-next::after {
@@ -203,13 +215,23 @@ body {
   right: -8px;
 }
 
-.cont-img-home{
-    max-height:500px;
-    width: 100%;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: minmax(min-content, 780px ) minmax(min-content, 400px );
-    grid-template-areas: 
+
+/*.cont-img-home{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  gap: 30px;
+  grid-template-columns: minmax(min-content, 780px ) minmax(min-content, 400px );
+  grid-template-areas: 
+}
+.cont-img-home {
+  max-height: 500px;
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: minmax(min-content, 780px) minmax(min-content, 400px);
+  grid-template-areas:
+>>>>>>> fce45d84fa61d5d0966ad961a5bfca425531e793
     "cont-img1 cont-img1"
     "cont-img2 cont-img3";
 }
@@ -217,23 +239,201 @@ body {
 .cont-img-home .cont-img1{
     background-color: bisque;
     grid-area: cont-img1;
-    max-height: 500px;
 }
     
 .cont-img-home .cont-img2{
     background-color:aqua ;
     grid-area: cont-img2;
-    max-height: 233px;
 }
     
     
 .cont-img-home .cont-img3{
     background-color: burlywood;
     grid-area: cont-img3;
-    max-height: 233px;
 }
 .cont-img-home img {
-    max-height: 100%;
-    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+
+.container-collage {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 3rem;
+    padding: 2rem 4rem 4rem;
+    align-items: center;
+    position: relative;
+    left: 14px;
+}
+  .container-collage .wrapper {
+    transform: skew(-10deg);
+    transition: 0.25s;
+    cursor: pointer;
+    max-width: 250px;
+    
 }
 
+.container-collage .wrapper:before {
+    content: '';
+    left: 0;
+    top: 0;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    border-radius: 40px;
+    opacity: 0;
+    border: 2px solid #1f1e1d;
+    position: absolute;
+    z-index: -1;
+    transition: 0.5s 0.05s;
+}
+.container-collage .wrapper:hover:before {
+    opacity: 1;
+    transform: translateY(1.5rem) translateX(1.5rem);
+}
+.container-collage .wrapper:nth-child(1) .card:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/1.png");
+    background-size: cover;
+    background-color: #373f51;
+    background-blend-mode: screen;
+    transform: skew(10deg) scale(1.2);
+    transition: 0.25s;
+}
+.container-collage .wrapper:nth-child(2) .card:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/12.png");
+    background-size: cover;
+    background-color: #373f51;
+    background-blend-mode: screen;
+    transform: skew(10deg) scale(1.2);
+    transition: 0.25s;
+}
+.container-collage .wrapper:nth-child(3) .card:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/13.png");
+    background-size: cover;
+    background-color: #373f51;
+    background-blend-mode: screen;
+    transform: skew(10deg) scale(1.2);
+    transition: 0.25s;
+}
+.container-collage .wrapper:nth-child(4) .card:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/15.png");
+    background-size: cover;
+    background-color: #373f51;
+    background-blend-mode: screen;
+    transform: skew(10deg) scale(1.2);
+    transition: 0.25s;
+}
+.container-collage .wrapper:nth-child(5) .card:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/16.png");
+    background-size: cover;
+    background-color: #373f51;
+    background-blend-mode: screen;
+    transform: skew(10deg) scale(1.2);
+    transition: 0.25s;
+}
+.container-collage .wrapper:nth-child(6) .card:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/18.png");
+    background-size: cover;
+    background-color: #373f51;
+    background-blend-mode: screen;
+    transform: skew(10deg) scale(1.2);
+    transition: 0.25s;
+}
+.container-collage .wrapper:hover {
+    transform: translateX(-1rem) translateY(-1rem) skew(-10deg);
+}
+.container-collage .wrapper:hover .card {
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0,0,0,0.1);
+}
+.container-collage .wrapper:hover .card:after {
+    background-blend-mode: normal;
+}
+.container-collage .wrapper:hover .card .fal {
+    bottom: 4rem;
+    background-color: rgba(255,255,255,0.8);
+}
+.container-collage .card {
+    background-color: #fff;
+    border-radius: 40px;
+    height: 15rem;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.container-collage .card:after {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.container-collage .card .fal {
+    position: absolute;
+    bottom: -1rem;
+    right: 3rem;
+    border-radius: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    z-index: 1;
+    transform: skew(10deg) translateY(50%);
+    text-align: center;
+    transition: 0.25s;
+}
+  
+.cont-img-home .cont-img1 {
+  background-color: bisque;
+  grid-area: cont-img1;
+  max-height: 500px;
+}
+
+.cont-img-home .cont-img2 {
+  background-color: aqua;
+  grid-area: cont-img2;
+  max-height: 233px;
+}
+
+.cont-img-home .cont-img3 {
+  background-color: burlywood;
+  grid-area: cont-img3;
+  max-height: 233px;
+}
+.cont-img-home img {
+  max-height: 100%;
+  max-width: 100%;
+}
