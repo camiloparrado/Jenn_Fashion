@@ -41,7 +41,7 @@ export const Header = () => {
                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
                                     <li className='nav-item item-link'>
                                         <Link to={"#"} className="nav-link pad-b-link" >
-                                            <i className="fa-brands fa-shopify"></i>
+                                            <i className="tienda fa-brands fa-shopify"></i>
                                             <span className="menu-list__title">TIENDA</span>
                                         </Link>
                                     </li>
