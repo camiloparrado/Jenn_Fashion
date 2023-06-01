@@ -13,7 +13,6 @@
 body {
   margin: 0;
   padding: 0;
-  color: #000;
   background: rgb(186, 153, 81);
   background: linear-gradient(
       0deg,
@@ -24,7 +23,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 .layout_content {
-  margin-top: 40px;
+  margin-top: 40px; /*lupa :v*/
 }
 
 .estilo__inicio {
