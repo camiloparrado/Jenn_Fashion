@@ -1,7 +1,9 @@
-import React from 'react'
+
 
 export const Shoping = () => {
   return (
-    <div>shoping</div>
+    <div className="cont-box">
+      <h1 className="tittle-products">Tienda</h1>
+    </div>
   )
 }

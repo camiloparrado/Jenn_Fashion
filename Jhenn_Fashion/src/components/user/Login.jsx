@@ -23,7 +23,7 @@ export const Login = () => {
                 <label className="form-check-label" htmlFor="connected">Mostrar Contraseña</label>
               </div>
               <div className="d-grid">
-                <button type="submit" className="btn btn-primary">Iniciar sesión</button>
+                <button type="submit" className="btn btn-login">Iniciar sesión</button>
               </div>
               <div className="my-3">
                 <span><a href="#">Recuperar Contraseña</a></span>

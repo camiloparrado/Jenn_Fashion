@@ -33,6 +33,21 @@
         border-top-left-radius: var(--bs-border-radius)!important;
         border-bottom-left-radius: var(--bs-border-radius)!important;
     }
+    .item-link i {
+        font-size: 20px;
+    }
+    .btn-toggler{
+        font-size: 10px;
+    }
+    .user-login{
+        margin-top: 5px;
+    }
+    .carrito-shop{
+        height: 27px !important;
+    }
+    .nav-2{
+        padding: 0;
+    }
 }
 
 @media(max-width:415px){
@@ -46,39 +61,7 @@
     }
 }
 
-@media(max-width:376){
-    .item-link{
-        margin: 5px;
-        text-align: center;
-        font-size: 5px;
-    }
-    .item-link i{
-        font-size: 20px;
-    }
-}
-
-@media(max-width:498px){
-    .links-ul .nav-underline{
-        gap: 1rem;
-    }
-    
-}
-
-@media(max-width:680px){
-
-    .item-link span{
-        font-size: 10px;
-    }
-    .item-link i{
-        font-size: 25px;
-    }
-    .item-link-2{
-        font-size: 10px;
-    }
-    
-}
-
-@media screen and(min-width:340px){
+/* @media screen and(min-width:340px){
 
     .swiper{
         width: 340px !important;
@@ -89,32 +72,138 @@
     .swiper{
         width: 375px !important;
     }
-}
-@media screen and(min-width:768px){
+} */
+
+/* @media screen and (min-width:576px){
+
+    .modal-descripcion-product{
+        max-width: 540px; 
+    }
+} */
+
+/* @media screen and (min-width:768px){
 
     .swiper{
         width: 768px !important;
     }
-}
-@media screen and(min-width:992px){
+} */
+@media screen and (min-width:992px){
 
-    .swiper{
+    /* .swiper{
         width: 992px !important;
+    } */
+    .modal-descripcion-product{
+        max-width: 1016px; 
+    }
+
+    .scrollable-info{
+        overflow: auto;
+        max-height: 500px;
     }
 }
-@media screen and(min-width:1240px){
+
+/* @media screen and (min-width:1240px){
 
     .swiper{
         width: 1240px !important;
     }
-}
+} */
 
-/* @media screen and (min-width:1200px){
-    .cont-img-home{
-        grid-template-columns: minmax(min-content, 780px ) minmax(min-content, 400px );
-        grid-template-areas: 
-        "cont-img1 cont-img2"
-        "cont-img1 cont-img3";
+@media screen and (min-width:997px){
+    .container-collage {
+        display: grid;
+        grid-gap: 3rem !important;
+        align-items: center;
+        position: relative;
+        justify-items: center;
+    }
+    .container-collage .wrapper h2{
+        font-size: calc(1.325rem + .9vw) !important;;      
     }
     
-} */
+    .container-collage .wrapper:hover:before {
+        opacity: 1;
+        transform: translateY(2rem) translateX(1.5rem) !important;
+    }
+    .container-collage .wrapper:hover .cardd .fal {
+        bottom: 4rem !important;
+        background-color: rgba(255,255,255,0.8);
+    }
+    .container-collage .cardd {
+        height: 15rem !important;
+        width: 15rem !important;
+    }
+    .container-collage .cardd .fal {
+        bottom: -2rem !important;
+        right: 3rem !important;
+        padding: 1rem !important;
+        font-size: 1.5rem !important;
+        transform: skew(10deg) translateY(50%) !important;
+       
+    }
+    .container-collage .wrapper:nth-child(1) .cardd:after {
+        background-color: #373f51;
+    }
+    .container-collage .wrapper:nth-child(2) .cardd:after {
+        background-color: #373f51;
+    }
+    .container-collage .wrapper:nth-child(3) .cardd:after {
+        background-color: #373f51;
+    }
+    .container-collage .wrapper:nth-child(4) .cardd:after {
+        background-color: #373f51;
+    }
+    .container-collage .wrapper:nth-child(5) .cardd:after {
+        background-color: #373f51;
+    }
+    .container-collage .wrapper:nth-child(6) .cardd:after {
+        background-color: #373f51;
+    }
+}
+
+@media screen and (min-width:710px){
+    .container-collage {
+        grid-template-columns: auto auto auto !important; /*tamaño para 710 px*/
+    }
+}
+@media screen and (min-width:487px) {
+    .container-collage {
+        padding: 2rem 4rem !important; /*tamaño para 487 px*/
+    }
+}
+@media screen and (min-width:374px) {
+    .container-collage {
+        grid-template-columns: auto auto; /*tamaño para 350 px*/
+        grid-gap: 2rem;/*tamaño para 350 px*/
+        padding: 2rem 1rem;/*tamaño para 350 px*/
+    }
+    .container-collage .cardd {
+        height: 9rem; /*tamaño para 350px*/
+        width: 9rem; /*tamaño para 350*/
+    }
+}
+
+@media  screen and (max-width:560px) {
+    .ir{
+        font-size: 10px;
+        font-weight: 700;
+    }
+}
+
+@media  screen and (max-width:475px) {
+    .info-agregar{
+        padding: 3px;
+    }
+}
+@media  screen and (max-width:429px) {
+    .carrito-añadir{
+        width: 20px;
+        height: 20px;
+    }
+    .info-agregar{
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
+
+    

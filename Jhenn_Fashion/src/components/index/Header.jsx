@@ -1,92 +1,87 @@
-import React from 'react';
-import logo from '../../assets/img/image.png';
-import { Link, NavLink } from 'react-router-dom';
-import imgBanner from '../../assets/img/2565264.jpg';
-import imgBanner2 from '../../assets/img/2430757.jpg';
-import imgBanner3 from '../../assets/img/2566017.jpg';
+import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Carousel } from './Carousel';
+import { NavCategorias } from './NavCategorias';
+import { NavItems } from './NavItems';
 
 export const Header = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isDropdownOpen_2, setIsDropdownOpen_2] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 992) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, []);
+
+    const handleMouseEnter = () => setIsDropdownOpen(true);
+    const handleMouseLeave = () => {
+        document.querySelector('.dropdown-menu-1').classList.add('animate__fadeOut', 'animate__delay-0.1s', 'animate__faster');
+        setTimeout(() => {
+            setIsDropdownOpen(false);
+        }, 300);
+    };
+    
+    const handleClickMouse = () => {
+        if (isDropdownOpen) {
+            handleMouseLeave();
+        } else {
+            handleMouseEnter();
+        }
+    }
+
+    const handleMouseEnter_2 = () => setIsDropdownOpen_2(true);
+    const handleMouseLeave_2 = () => {
+        document.querySelector('.dropdown-menu-2').classList.add('animate__fadeOut', 'animate__delay-0.1s', 'animate__faster');
+        setTimeout(() => {
+            setIsDropdownOpen_2(false);
+        }, 300);
+    };
+    const handleClickMouse_2 = () => {
+        if (isDropdownOpen_2) {
+            handleMouseLeave_2();
+        } else {
+            handleMouseEnter_2();
+        }
+    }
+
     return (
         <>
             <header>
                 <div id="carouselExampleAutoplaying" className="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active" data-bs-interval="4500">
-                            <img src={imgBanner} className="d-block w-100 img-carousel" alt="img=carousel-1" />
-                        </div>
-                        <div className="carousel-item" data-bs-interval="4500">
-                            <img src={imgBanner2} className="d-block w-100 img-carousel" alt="img=carousel-1" />
-                        </div>
-                        <div className="carousel-item" data-bs-interval="4500">
-                            <img src={imgBanner3} className="d-block w-100 img-carousel" alt="img=carousel-1" />
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <div className="buton-style">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </div>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <div className="buton-style">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        </div>
-                        <span className="visually-hidden">Next</span>
-                    </button>
+                    <Carousel />
                 </div>
-                <div className="links">
-                    <nav className="navbar navbar-expand cont-links-nav">
-                        <div className="container-fluid">
-                            <div className='links-ul'>
-                                <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
-                                    <li className='nav-item item-link'>
-                                        <Link to={"#"} className="nav-link pad-b-link" >
-                                            <i className="tienda fa-brands fa-shopify"></i>
-                                            <span className="menu-list__title">TIENDA</span>
-                                        </Link>
-                                    </li>
-                                    <li className='nav-item item-link'>
-                                        <Link to={"#"} className="nav-link pad-b-link" aria-current="page">
-                                            <i className="fa-brands fa-square-whatsapp"></i>
-                                            <span className="menu-list__title">ASESORA DE VENTA</span>
-                                        </Link>
-                                    </li>
-                                    <li className='nav-item item-link'>
-                                        <Link to={"#"} className="nav-link pad-b-link" aria-current="page">
-                                            <i className="fa-brands fa-square-instagram"></i>
-                                            <span className="menu-list__title">INSTAGRAM</span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
+                <div className={`links ${isMobile ? '' : 'd-flex align-items-center'}`}>
+                    <NavCategorias
+                        NavLink={NavLink}
+                        isDropdownOpen={isDropdownOpen}
+                        handleMouseEnter={handleMouseEnter}
+                        handleMouseLeave={handleMouseLeave}
+                        handleClickMouse={handleClickMouse}
+                    />
+                    <NavItems
+                        NavLink={NavLink}
+                        isDropdownOpen_2={isDropdownOpen_2}
+                        handleMouseEnter_2={handleMouseEnter_2}
+                        handleMouseLeave_2={handleMouseLeave_2}
+                        handleClickMouse_2={handleClickMouse_2}
+                        
+                    />
                 </div>
-                <div className='info-adi d-none d-md-flex'>
+                <div className='info-adi d-none d-lg-flex'>
                     <span>Envíos gratis por compras mayores a $150.000 COP</span>
                 </div>
-                <nav className="navbar navbar-expand cont-nav">
-                    <div className="container-fluid">
-                        <div className='links-ul'>
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-underline">
-                                <li className='item-inicio nav-item item-link-2'>
-                                    <NavLink to={"/inicio"} className="nav-link" >
-                                        <i className="fa-solid fa-home"></i>
-                                        <span className="menu-list__title">INICIO</span>
-                                    </NavLink>
-                                </li>
-                                <li className='item-login nav-item item-link-2'>
-                                    <NavLink to={"/login"} className="nav-link" aria-current="page">
-                                        <i className="fa-solid fa-user"></i>
-                                        <span className="menu-list__title">LOGIN</span>
-                                    </NavLink>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
             </header>
-
         </>
     )
 }

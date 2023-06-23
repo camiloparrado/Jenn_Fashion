@@ -1,0 +1,32 @@
+.container-collage {
+        display: grid;
+        grid-gap: 3rem;
+        padding: 2rem 4rem;
+        align-items: center;
+        position: relative;
+        justify-items: center;
+    }
+    .container-collage .wrapper h2{
+        font-size: calc(1.325rem + .9vw) !important;;      
+    }
+    
+    .container-collage .wrapper:hover:before {
+        opacity: 1;
+        transform: translateY(2rem) translateX(1.5rem) !important;
+    }
+    .container-collage .wrapper:hover .cardd .fal {
+        bottom: 4rem;
+        background-color: rgba(255,255,255,0.8);
+    }
+    .container-collage .cardd {
+        height: 15rem !important;
+        width: 15rem !important;
+    }
+    .container-collage .cardd .fal {
+        bottom: -1rem !important;
+        right: 3rem !important;
+        padding: 1rem !important;
+        font-size: 1.5rem !important;
+        transform: skew(10deg) translateY(50%) !important;
+    }
+background-color: #373f51;

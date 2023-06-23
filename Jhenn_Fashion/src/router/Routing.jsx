@@ -1,38 +1,40 @@
-import { Routes, Route, BrowserRouter, Navigate, Link } from 'react-router-dom';
-import { Inicio } from '../components/index/inicio';
+import { Routes, Route, BrowserRouter, Link } from 'react-router-dom';
+import { Inicio } from '../components/index/Inicio';
 import { Login } from '../components/user/Login';
 import { InicioLayout } from '../components/index/InicioLayout';
-import { ShopingLayout } from '../components/publications-shoping/ShopingLayout';
 import { Shoping } from '../components/publications-shoping/shoping';
+import { EnOferta } from '../components/billing/EnOferta';
+import { DataProductContext } from '../context/DataProductContext';
 
 
 
 
 export const Routing = () => {
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<InicioLayout />} >
-          <Route index element={<Inicio />} />
-          <Route path="inicio" element={<Inicio />} />
-          <Route path="login" element={<Login />} />
-        </Route>
-        <Route path='/tienda' element={<ShopingLayout/>}>
-            <Route index element={<Shoping/>}/>
-            <Route path='tienda-home' element={<Shoping/>}/>
-        </Route>
-        <Route
-          path="*"
-          element={
-            <>
-              <p>
-                <h1>Error 404</h1>
-                <Link to="/inicio">Volver al inicio</Link>
-              </p>
-            </>
-          }
-        ></Route>
-      </Routes>
+      <DataProductContext>
+        <Routes>
+          <Route path='/' element={<InicioLayout />} >
+            <Route index element={<Inicio />} />
+            <Route path="login" element={<Login />} />
+            <Route path='tienda' element={<Shoping />} />
+            <Route path='En-Oferta' element={<EnOferta />} />
+          </Route>
+          <Route
+            path="*"
+            element={
+              <>
+                <p>
+                  <h1>Error 404</h1>
+                  <Link to="/inicio">Volver al inicio</Link>
+                </p>
+              </>
+            }
+          ></Route>
+        </Routes>
+      </DataProductContext>
     </BrowserRouter>
+
   )
 }
