@@ -17,8 +17,10 @@ app.use(express.urlencoded({extended:true}));
 
 //Cargar las rutas
 const UserRoutes = require("./routes/user");
+const ProductRoutes = require("./routes/product");
 
 app.use("/api/user",UserRoutes);
+app.use("/api/product",ProductRoutes);
 
 //Poner el servidor a escuchar peticiones http
 app.listen(puerto, ()=>{
