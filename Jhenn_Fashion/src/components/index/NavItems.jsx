@@ -24,7 +24,7 @@ export const NavItems = ({ NavLink, isDropdownOpen_2,  handleMouseEnter_2, handl
                         <div className="collapse-nav collapse navbar-collapse" id='mynav'>
                             <ul className="navbar-nav mb-2 mb-lg-0">
                                 <li className='nav-item' >
-                                    <NavLink to={"/inicio"} className="nav-link " >
+                                    <NavLink to={"/"} className="nav-link " >
                                         <span>INICIO</span>
                                     </NavLink>
                                 </li>

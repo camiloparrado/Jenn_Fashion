@@ -8,7 +8,7 @@ export const Modal = () => {
         <>
             <div>
                 <div className="modal fade " id="modalExample" tabIndex="-1" aria-labelledby="modalTitle" aria-hidden="true">
-                    <div className="modal-dialog modal-descripcion-product">
+                    <div className="modal-dialog modal-dialog-centered modal-descripcion-product">
                         <div className="modal-content">
                             <div className="cerrar-modal" data-bs-dismiss="modal" aria-label="Close">
                                 <svg id="Flat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -23,6 +23,7 @@ export const Modal = () => {
                                                 nextEl: '.next-3',
                                                 prevEl: '.prev-3',
                                             }}
+                                            grabCursor={true}
                                             effect={"creative"}
                                             modules={[Navigation, Pagination]}
                                             pagination={{
@@ -53,15 +54,15 @@ export const Modal = () => {
                                         {/* pagination */}
 
                                     </div>
-                                    <div className="col-lg-6 ">
-                                        <div className="scrollable-info d-flex flex-column gap-4 p-3">
-                                            <h2 className="nombre-producto">Nombre del producto</h2>
+                                    <div className="col-lg-6">
+                                        <div className="scrollable-info d-flex flex-column gap-3 p-3">
+                                            <h2 className="nombre-producto">Nombre del producto que es muy largo</h2>
                                             <p className="precio-producto">$ 000.00</p>
-                                            <p>Envío calculado en la facturación</p>
+                                            <p className='envio-producto'><span>Envío</span> calculado en la facturación</p>
                                             {/* talla para seleccionar con etiqueta select */}
                                             <div className="talla-producto">
-                                                <label htmlFor="talla">Talla</label>
-                                                <select name="talla" id="talla">
+                                                <label htmlFor="talla">Tallas: </label>
+                                                <select name="talla" id="talla" className='select-tallas'>
                                                     <option value="S">S</option>
                                                     <option value="M">M</option>
                                                     <option value="L">L</option>
@@ -88,13 +89,4 @@ export const Modal = () => {
             </div>
         </>
     )
-}
-
-
-Modal.defaultProps = {
-
-    // Nombre: "Nombre del producto",
-    // Precio
-
-
 }

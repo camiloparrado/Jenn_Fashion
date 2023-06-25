@@ -7,6 +7,8 @@ import { useLocation } from 'react-router-dom';
 import { ContactoWhatsapp } from './ContactoWhatsapp';
 import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Modal } from './Modal';
+import { ScrollButtonUp } from './ScrollButtonUp';
+import { Bolsa } from './Bolsa';
 
 export const InicioLayout = () => {
   //useState para preguntar si el usuario esta en la seccion de login, si lo esta, no se muestra el componente search
@@ -27,12 +29,14 @@ export const InicioLayout = () => {
   return (
     <>
       {/* header? */}
-      <Header />
+      <Header/>
       <main className='layout_content'> {/*main*/}
         {showSearch && (
           <>
             <Search />
             <ContactoWhatsapp />
+            <ScrollButtonUp />
+            <Bolsa/>
           </>
         )}
         <Outlet></Outlet>

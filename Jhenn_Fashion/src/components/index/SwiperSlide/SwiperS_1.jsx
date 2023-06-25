@@ -28,14 +28,14 @@ export const SwiperS_1 = () => {
                 onMouseLeave={handleMouseLeave}
 
             >
-                <div className="img-wrapper">
+                <div className="img-wrapper"> 
                     <CSSTransition
                         in={!isHovered}
                         timeout={1000}
                         classNames="fade"
                         unmountOnExit
                     >
-                        <img src="/src/assets/img/1.png" alt="..." className="img-fade" />
+                        <img src="/src/assets/img/1.png" alt="..." className="img-fade" data-bs-toggle="modal" data-bs-target="#modalExample"/>{/*aqui onclick para enviar informacion que se muestra en el modal */}
                     </CSSTransition>
                     <CSSTransition
                         in={isHovered}
@@ -43,7 +43,7 @@ export const SwiperS_1 = () => {
                         classNames="fade"
                         unmountOnExit
                     >
-                        <img src="/src/assets/img/8.png" alt="..." className="img-fade" />
+                        <img src="/src/assets/img/8.png" alt="..." className="img-fade" data-bs-toggle="modal" data-bs-target="#modalExample"/>{/*aqui onclick para enviar informacion que se muestra en el modal */}
                     </CSSTransition>
 
                     <div className="cont-ver-pro show d-lg-none">
@@ -76,8 +76,8 @@ export const SwiperS_1 = () => {
                     </div>
 
                 </div>
-                <div className="card-body card-body-clothes ">
-                    <h2 className="card-title">Card title</h2>
+                <div className="card-body card-body-clothes">
+                    <h2 className="card-title"  data-bs-toggle="modal" data-bs-target="#modalExample">ENTERO 1306 COPA REALCE ROMERO</h2> {/*aqui onclick para enviar informacion que se muestra en el modal */}
                     <p className="card-text">$150.000</p>
                     <div className="products-variant">
                         <ul className="content-variant-list">

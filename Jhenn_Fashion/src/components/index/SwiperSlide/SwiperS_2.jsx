@@ -31,7 +31,7 @@ export const SwiperS_2 = () => {
                         classNames="fade"
                         unmountOnExit
                     >
-                        <img src="/src/assets/img/9.png" alt="..." className="img-fade" />
+                        <img src="/src/assets/img/13.png" alt="..." className="img-fade" />
                     </CSSTransition>
                     <CSSTransition
                         in={isHovered}
