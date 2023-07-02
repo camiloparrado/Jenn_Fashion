@@ -28,6 +28,6 @@ router.delete("/remove/:id",check.auth,productController.remove); //remover arti
 router.put("/update/:id",check.auth,productController.update); //actualizar articulo de la base de datos del id que se envia
 router.get("/getProducts/:id",productController.getProducts); //obtener articulos de la base de datos del id que se envia
 router.get("/multimedia/:file",productController.multimedia); //obtener imagenes de la base de datos, por la que se pregunte
-
+router.get("/arrayProducts",productController.arrayProducts); //obtener todos los articulos de la base de datos
 //Exportar la ruta 
 module.exports = router;
