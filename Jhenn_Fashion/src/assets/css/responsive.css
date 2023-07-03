@@ -2,6 +2,13 @@
     .cont-login{
         max-width:380px;
     }
+    .btn-ir-carrito span{
+     font-size: 15px;
+
+    }
+    .btn-seguir-comprando span{
+        font-size: 15px;
+    }
 }
 
 @media(max-width:505px){
@@ -172,6 +179,7 @@
  
 }
 
+
 @media  screen and (max-width:560px) {
     .ir{
         font-size: 10px;
@@ -195,4 +203,15 @@
     }
 }
 
+/* @media screen and (max-width: 768px) {
+    .mg-dash{
+        flex: 0 0 30px;
+    }
+    .info-dash{
+        flex: 0 0 255px;
+    }
+    .accion-prodcutos-dash{
+        flex: 0 0 150px;
+    }
+} */
     

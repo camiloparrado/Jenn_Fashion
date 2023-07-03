@@ -3,7 +3,7 @@ import carrito from '../../assets/img/carrito.svg';
 export const NavItems = ({ NavLink, isDropdownOpen_2,  handleMouseEnter_2, handleMouseLeave_2, handleClickMouse_2}) => {
     return (
         <>
-            <nav className="navbar navbar-nav navbar-expand-lg nav-2">
+            <nav className="navbar navbar-nav navbar-expand-lg nav-2 items-acciones">
                 <div className="container-fluid justify-content-end">
                     <div className="navar-brand d-flex flex-row">
                         <li className='nav-item item-link p-2'>
@@ -12,6 +12,9 @@ export const NavItems = ({ NavLink, isDropdownOpen_2,  handleMouseEnter_2, handl
                             </NavLink>
                         </li>
                         <li className='nav-item item-link p-2'>
+                            <div className="count-car">
+                                <span>10</span>
+                            </div>
                             <NavLink to={"/carrito"} className="nav-link" >
                                 <img src={carrito} alt="carrito" className='carrito-shop' />
                             </NavLink>

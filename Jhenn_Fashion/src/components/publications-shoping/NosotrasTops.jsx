@@ -1,8 +1,8 @@
-
 import { useState } from "react";
 import { CSSTransition } from 'react-transition-group';
 
-export const Shoping = () => {
+export const NosotrasTops = () => {
+
   const [selectedVariant, setSelectedVariant] = useState('S');
   const [isHovered, setIsHovered] = useState(false);
 
@@ -18,10 +18,9 @@ export const Shoping = () => {
     setIsHovered(false);
   };
 
-
   return (
-    <div className="cont-box">
-      <h1 className="tittle-products">Tienda</h1>
+     <div className="cont-box">
+      <h1 className="tittle-products">Tops</h1>
       <div className="row row-shop row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 p-3">
         <div className="col col-shop">
           <div className="card card-wrapper-shop h-100"

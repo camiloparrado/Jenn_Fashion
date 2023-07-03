@@ -19,11 +19,11 @@ export const Slider = () => {
                 <i className="fa-solid fa-circle-chevron-left fa-rotate-180"></i>
             </div>
             <Swiper modules={[Navigation, Autoplay]} className="mySwiper"
-                // autoplay={{
-                //     delay: 6100,
-                //     disableOnInteraction: false,
-                //     pauseOnMouseEnter: true,
-                // }}
+                autoplay={{
+                    delay: 6100,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                }}
                 navigation={{
                     nextEl: '.next',
                     prevEl: '.prev',

@@ -37,11 +37,11 @@ export const NavCategorias = ({ NavLink, isDropdownOpen, handleMouseEnter, handl
                                     <span>NOSOTRAS</span>
                                 </div>
                                 <ul className={`dropdown-menu dropdown-menu-1 animate__animated ${isDropdownOpen ? 'show animate__fadeIn animate__delay-0.1s animate__faster' : ''}`}>
-                                    <li><NavLink className="dropdown-item dropdown-item-1" to={''}><span>Shorts</span></NavLink></li>
-                                    <li><NavLink className="dropdown-item dropdown-item-1" to={''}><span>Leggins</span></NavLink></li>
-                                    <li><NavLink className="dropdown-item dropdown-item-1" to={''}><span>Tops</span></NavLink></li>
-                                    <li><NavLink className="dropdown-item dropdown-item-1" to={''}><span>Conjuntos</span></NavLink></li>
-                                    <li><NavLink className="dropdown-item dropdown-item-1" to={''}><span>Bikkers</span></NavLink></li>
+                                    <li><NavLink className="dropdown-item dropdown-item-1" to={'/Nosotras-shorts'}><span>Shorts</span></NavLink></li>
+                                    <li><NavLink className="dropdown-item dropdown-item-1" to={'/Nosotras-leggins'}><span>Leggins</span></NavLink></li>
+                                    <li><NavLink className="dropdown-item dropdown-item-1" to={'/Nosotras-tops'}><span>Tops</span></NavLink></li>
+                                    <li><NavLink className="dropdown-item dropdown-item-1" to={'/Nosotras-conjuntos'}><span>Conjuntos</span></NavLink></li>
+                                    <li><NavLink className="dropdown-item dropdown-item-1" to={'/Nosotras-bikkers'}><span>Bikkers</span></NavLink></li>
                                 </ul>
                             </li>
                         </ul>

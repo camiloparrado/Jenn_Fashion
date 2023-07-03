@@ -9,6 +9,7 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Modal } from './Modal';
 import { ScrollButtonUp } from './ScrollButtonUp';
 import { Bolsa } from './Bolsa';
+import { ModalBolsa } from './ModalBolsa';
 
 export const InicioLayout = () => {
   //useState para preguntar si el usuario esta en la seccion de login, si lo esta, no se muestra el componente search
@@ -24,23 +25,24 @@ export const InicioLayout = () => {
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl);
     });
-  }, []);
+  }, [location]);
 
   return (
     <>
       {/* header? */}
-      <Header/>
+      <Header />
       <main className='layout_content'> {/*main*/}
         {showSearch && (
           <>
             <Search />
             <ContactoWhatsapp />
             <ScrollButtonUp />
-            <Bolsa/>
+            <Bolsa />
           </>
         )}
         <Outlet></Outlet>
-        <Modal/>
+        <Modal />
+        <ModalBolsa />
       </main>
       <Footer />
     </>

@@ -2,6 +2,7 @@ import { Slider } from './Slider';
 import { Slider1 } from './Slider1';
 import { Slider2 } from './Slider2';
 import { Categorias_inicio } from './Categorias_inicio';
+import { NavLink } from 'react-router-dom';
 // import { Modal } from './Modal';
 
 export const Inicio = () => {
@@ -40,9 +41,9 @@ export const Inicio = () => {
                 <div className="cont-info">
                     <Slider2 />
                 </div>
-                <a className="btn btn-dark ir" href="#" role="button">
+                <NavLink to={"/tienda"} className="btn btn-dark ir" role="button">
                     Ver más en la tienda <i className="fa-solid fa-right-to-bracket btn-ir"></i>
-                </a>
+                </NavLink>
             </div>
             {/* <Modal /> */}
         </>

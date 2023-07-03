@@ -1,10 +1,13 @@
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 
-//importar bootstrap
+//importar jquery
 import 'jquery';
+import 'jquery/dist/jquery.min.js';
+//importar bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 //Importar recursos assets
 import './assets/fonts/fontawesome-free-6.1.2-web/css/all.css';
 import './assets/css/styles.css';
