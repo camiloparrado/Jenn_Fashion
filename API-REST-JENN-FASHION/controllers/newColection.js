@@ -4,9 +4,9 @@ const { validate } = require("../helper/validate");
 const path = require("path");
 
 //importar modelos
-const Product = require("../models/product");
+const Product = require("../models/newColection");
 const multer = require("multer");
-const product = require("../models/product");
+const product = require("../models/newColection");
 
 const save = (req, res) => {
     //recoger parametros por post a guardar
@@ -101,21 +101,21 @@ const upload = (req, res) => {
 
     // Buscar el producto y asignarle el nombre de las imágenes y actualizarlo
 
-    Product.findOneAndUpdate({ _id: id }, { $set: { image1: file1.filename, image2: file2.filename } }, { new: true })
-        .then((articuloActualizado) => {
+        Product.findOneAndUpdate({ _id: id }, { $set: { image1: file1.filename, image2: file2.filename } }, { new: true })
+            .then((articuloActualizado) => {
 
-            return res.status(200).json({
-                status: "success",
-                articulo: articuloActualizado,
-                fichero: req.file
+                return res.status(200).json({
+                    status: "success",
+                    articulo: articuloActualizado,
+                    fichero: req.file
+                })
             })
-        })
-        .catch((error) => {
-            return res.status(500).json({
-                status: "error",
-                mensaje: "no se pudo actualizar"
+            .catch((error) => {
+                return res.status(500).json({
+                    status: "error",
+                    mensaje: "no se pudo actualizar"
+                });
             });
-        });
 }
 
 const remove = (req, res) => {
@@ -203,52 +203,22 @@ const multimedia = (req, res) => {
 
     //comprobar si existe el fichero
     fs.promises.stat(pathFile)
-        .then((exists) => {
-            if (!exists) {
-                return res.status(404).send({
-                    status: "error",
-                    message: "La imagen no existe",
-                });
-            }
-            return res.sendFile(path.resolve(pathFile));
-        })
-        .catch((error) => {
-            return res.status(500).send({
-                status: "error",
-                message: "Error al obtener la imagen",
-                error: error,
-            });
-        });//stats es un objeto con los datos del fichero  
-}
-
-const arrayProducts = (req, res) => {
-
-    let consulta = Product.find({});
-
-    if (req.params.ultimos) {
-        consulta.limit(req.params.ultimos);
-    }
-    consulta.sort({ fecha: -1 })
-        .then((articulos) => {
-            if (!articulos) {
-                return res.status(400).json({
-                    status: "error",
-                    mensaje: "no se han encontrado articulos"
-                });
-            }
-            return res.status(200).send({
-                status: "success",
-                articulos
-            })
-        })
-        .catch((error) => {
-            return res.status(500).json({
-                status: "error",
-                mensaje: "ha ocurrido un error"
-            });
+    .then((exists) => {
+      if (!exists) {
+        return res.status(404).send({
+          status: "error",
+          message: "La imagen no existe",
         });
-
-
+      }
+      return res.sendFile(path.resolve(pathFile));
+    })
+    .catch((error) => {
+      return res.status(500).send({
+        status: "error",
+        message: "Error al obtener la imagen",
+        error: error,
+      });
+    });//stats es un objeto con los datos del fichero  
 }
 
 module.exports = {
@@ -257,6 +227,5 @@ module.exports = {
     remove,
     getProducts,
     update,
-    multimedia,
-    arrayProducts
+    multimedia
 }
